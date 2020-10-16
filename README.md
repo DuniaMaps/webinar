@@ -1,11 +1,9 @@
 # Dunia Maps webinar demo
 
 ## Requirements
-
 Node.js version 10 or newer
 
 ## Development
-
 1. Clone the repo
 2. Run `npm install`
 3. Run `npm run dev`
