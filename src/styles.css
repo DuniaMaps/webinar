@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.search-container {
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  left: 1em;
+  overflow: hidden;
+  position: absolute;
+  top: 1em;
+  width: min-content;
+  z-index: 2;
+}
+
+.search-box {
+  background: #fff;
+  display: flex;
+}
+
+.search-input {
+  border: none;
+  font-size: 1em;
+  padding: 0.8em;
+  width: 16em;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-button,
+.clear-button {
+  background: #fff;
+  border: none;
+  color: #888;
+  margin: 0;
+  padding: 0.8em;
+  transition: 0.2s;
+}
+
+.search-button:hover,
+.clear-button:hover {
+  color: #319795;
+  cursor: pointer;
+}
+.search-button:focus {
+  background: #eee;
+  outline: none;
+}
+
+.clear-button {
+  border-left: 1px solid #ccc;
+  margin: 0.8em 0;
+  padding: 0 0.8em;
+}
+
+.clear-button:focus,
+.search-item:focus {
+  outline: none;
+}
+
+.autocomplete-results {
+  display: flex;
+  flex-direction: column;
+}
+
+.autocomplete-item,
+.search-item {
+  background: #fff;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 1em;
+  padding: 0.9em;
+  text-align: left;
+}
+.autocomplete-item:first-child,
+.search-results {
+  border-top: 1px solid #ccc;
+}
+.autocomplete-item:last-child {
+  border-bottom: none;
+}
+.autocomplete-item:hover,
+.search-item:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.autocomplete-item span {
+  color: #888;
+  font-size: 0.85em;
+}
+
+.search-results-container {
+  background: #fff;
+  bottom: 0;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.3);
+  left: 0;
+  overflow: hidden;
+  padding-top: 5em;
+  position: absolute;
+  top: 0;
+  width: 25.5em;
+  z-index: 1;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 5em);
+  overflow: auto;
+}
+
+.search-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9em 1.2em;
+  position: relative;
+}
+
+.search-item div {
+  margin-bottom: 0.3em;
+}
+
+.search-item span {
+  color: #888;
+  font-size: 0.9em;
+  text-transform: capitalize;
+}
+
+.search-item svg {
+  color: #aaa;
+  height: 40px;
+  position: absolute;
+  right: 1em;
+  top: 1.25em;
+  width: 40px;
+}
+
+.no-results {
+  color: #333;
+  font: 600 1.2em sans-serif;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.no-results span {
+  font-style: italic;
+}
+
+.map {
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+  z-index: 0;
+}
+
+.custom-marker svg {
+  color: #319795;
+  height: 40px;
+  width: 40px;
+}

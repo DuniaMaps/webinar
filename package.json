@@ -1,0 +1,18 @@
+{
+  "name": "dm-webinar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server ./src --port 3000 -c-1 --silent --proxy http://167.172.162.114"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.7.1",
+    "normalize.css": "^8.0.1",
+    "reload": "^3.1.1"
+  }
+}
