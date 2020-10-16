@@ -15,7 +15,9 @@ searchInput.addEventListener("keyup", (event) => {
     fetchSearchResults(searchInput.value);
   }
 });
-searchInput.addEventListener("blur", () => {
+searchInput.addEventListener("blur", (event) => {
+  if (event.relatedTarget.classList.contains("autocomplete-item")) return;
+
   autocompleteResults.innerHTML = "";
 });
 searchInput.addEventListener("focus", () => {
@@ -90,7 +92,11 @@ let createAutocompleteResults = (features) => {
     button.innerHTML = `
           <div>${name}</div>
           <span>${level0}${level1 ? `, ${level1}` : ""}${level2 ? `, ${level2}` : ""}</span>
-            `;
+    `;
+    button.addEventListener("click", () => {
+      searchInput.value = feature.properties.name;
+      fetchSearchResults(feature.properties.name);
+    });
 
     return button;
   });
