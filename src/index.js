@@ -61,7 +61,7 @@ let fetchAutocompleteResults = (query) => {
     });
 };
 
-let fetchSearchResults = (query) => {
+let fetchSearchResults = (query, zoomToFirst = false) => {
   let { lat, lng } = map.getCenter();
   fetch(`/poi?q=${query}&lat=${lat}&lon=${lng}`)
     .then((res) => res.json())
@@ -72,6 +72,9 @@ let fetchSearchResults = (query) => {
       if (data.features && data.features.length > 0) {
         createSearchResults(data.features);
         addToMap(data);
+        if (zoomToFirst) {
+          zoomToMarker(data.features[0]);
+        }
       } else {
         let message = document.createElement("p");
         message.classList.add("no-results");
@@ -95,7 +98,7 @@ let createAutocompleteResults = (features) => {
     `;
     button.addEventListener("click", () => {
       searchInput.value = feature.properties.name;
-      fetchSearchResults(feature.properties.name);
+      fetchSearchResults(feature.properties.name, true);
     });
 
     return button;
